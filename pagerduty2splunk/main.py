@@ -75,7 +75,7 @@ def push_data_to_splunk(data, splunk_instance_id, splunk_token):
         "Authorization" :"Splunk " + splunk_token,
         'Content-type': 'application/json'
     }
-    url = "https://input-" + splunk_instance_id + ".cloud.splunk.com:8088/services/collector/event"
+    url = "https://" + splunk_instance_id + "/services/collector/event"
     req = urllib2.Request(url, data, headers=headers)
     try:
         if python_version_check([2,7,9]):
